@@ -1,4 +1,4 @@
-# Analiza podatkov s programom R, 2020/21
+# Analiza potovanj iz Slovenije
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2020/21
 
@@ -7,8 +7,22 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2020/21
 
 ## Tematika
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal.
-Tukaj boste napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+V projektni nalogi bom analizirala potovanja iz Slovenije. Osredotočila se bom na potovanja z letali. Uporabila bom podatke letov iz slovenskih letališč v tujino. Zavedam se, da to ni vedno podatek o končni destinaciji potovanja, saj potniki pogosto odletijo najprej do kakšnega večjega letališča v Evropi in nato naprej. Pogledala bom, kako se skozi čas spreminja število potnikov na različne destinacije v zadnjih desetih letih. Podatke bom za nekaj let analizirala tudi na mesečni ravni in skušala najti kakšne podobnosti, kot na primer, v katerem mesecu so potovanja v določeno državo najpogostejša. Preučila bom tudi, ali imajo povprečne cene letalskih kart kakšen vpliv na število potnikov. Potovanja z letali iz Slovenije bom prikazala tudi na zemljevidu sveta.
+
+## Opis podatkovnih virov
+Podatke bom poiskala na dveh spletnih straneh:
+
+* SURS:
+Podatki so na voljo v CSV, XML, JSON, PX obliki.
+
+* gapminder:
+Podatki so na voljo v CSV in XLSX obliki.
+
+*eurostat?
+
+## Zasnova podatkovnega modela
+
+## Plan dela 
 
 ## Program
 
