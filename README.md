@@ -7,10 +7,10 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2020/21
 
 ## Tematika
 
-V projektni nalogi bom analizirala potovanja iz Slovenije. Osredotočila se bom na potovanja z letali. Uporabila bom podatke letov iz slovenskih letališč v tujino. Zavedam se, da to ni vedno podatek o končni destinaciji potovanja, saj potniki pogosto odletijo najprej do kakšnega večjega letališča v Evropi in nato naprej. Pogledala bom, kako se skozi čas spreminja število potnikov na različne destinacije v zadnjih desetih letih. Podatke bom za nekaj let analizirala tudi na mesečni ravni in skušala najti kakšne podobnosti, kot na primer, v katerem mesecu so potovanja v določeno državo najpogostejša. Preučila bom tudi, ali imajo povprečne cene letalskih kart kakšen vpliv na število potnikov. Potovanja z letali iz Slovenije bom prikazala tudi na zemljevidu sveta.
+V projektni nalogi bom analizirala potovanja iz Slovenije. Osredotočila se bom na potovanja z letali. Najprej me bo zanimalo, kam letijo potniška letala z ljubljanskega letališča. Ker je ljubljansko letališče manjše, to pogosto niso podatki o končni destinaciji. Vseeno bom pogledala, kako se skozi čas spreminja število potnikov na različne destinacije v zadnjih desetih letih. Podatke bom za nekaj let analizirala tudi na mesečni ravni in skušala najti kakšne podobnosti, kot na primer, v katerem mesecu so potovanja v določeno državo najpogostejša. Preučila bom tudi, ali imajo povprečne cene letalskih kart kakšen vpliv na število potnikov. Podatke o cenah kart so sicer za ZDA, vendar bom morda vseeno našla kakšno povezavo. Potovanja z letali iz Slovenije bom prikazala tudi na zemljevidu sveta. Na koncu bom nekoliko analizirala tudi letalski potniški promet v Evropski uniji in sicer tako, da bom ugotovila, preko katere države potniška letala naredijo največ kilomentrov v razmerju s površino države. kako pogosto potniška letala letijo čez ozemlja posameznih držav.
 
 ## Opis podatkovnih virov
-Uporabljala bom podatke s treh spletnih strani:
+Uporabljala bom podatke s štirih spletnih strani:
 
 * SURS:
 Oblika: CSV
@@ -20,6 +20,9 @@ Oblika: CSV
 
 * Wikipedija
 Oblika:HTML
+
+* bts.gov
+Oblika: CSV
 
 ## Zasnova podatkovnega modela
 
