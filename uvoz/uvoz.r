@@ -2,32 +2,48 @@
 
 sl <- locale("sl", decimal_mark=",", grouping_mark=".")
 
-# Funkcija, ki uvozi občine iz Wikipedije
-uvozi.obcine <- function() {
-  link <- "http://sl.wikipedia.org/wiki/Seznam_ob%C4%8Din_v_Sloveniji"
-  stran <- html_session(link) %>% read_html()
-  tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
-    .[[1]] %>% html_table(dec=",")
+#UVOZ POVRšIN DRžAV EVROPSKE UNIJE Z WIKIPEDIJE
+
+uvozi.povrsine <- function() {
+  link <- "https://en.wikipedia.org/wiki/European_Union"
+  stran <- session(link) %>% read_html()
+  tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>%
+    .[[1]] %>% html_table(dec=".")
   for (i in 1:ncol(tabela)) {
     if (is.character(tabela[[i]])) {
       Encoding(tabela[[i]]) <- "UTF-8"
     }
   }
-  colnames(tabela) <- c("obcina", "povrsina", "prebivalci", "gostota", "naselja",
-                        "ustanovitev", "pokrajina", "regija", "odcepitev")
-  tabela$obcina <- gsub("Slovenskih", "Slov.", tabela$obcina)
-  tabela$obcina[tabela$obcina == "Kanal ob Soči"] <- "Kanal"
-  tabela$obcina[tabela$obcina == "Loški potok"] <- "Loški Potok"
-  for (col in c("povrsina", "prebivalci", "gostota", "naselja", "ustanovitev")) {
+  colnames(tabela) <- c("drzava", "prestolnica", "pridruzitev", "prebivalci", "povrsina",
+                        "gostota", "MEP")
+  sl <- locale("sl", decimal_mark=",", grouping_mark=".")
+  for (col in c("povrsina", "prebivalci", "gostota")) {
     if (is.character(tabela[[col]])) {
-      tabela[[col]] <- parse_number(tabela[[col]], na="-", locale=sl)
+      tabela[[col]] <- parse_number(tabela[[col]], locale=sl)  #stolpec gledamo kot seznam [[]] in zamenjamo mankajoce z na, na ostalih pa uporabimo sl
     }
   }
-  for (col in c("obcina", "pokrajina", "regija")) {
-    tabela[[col]] <- factor(tabela[[col]])
-  }
+  tabela$prestolnica <- NULL   #vseh teh stoplcev ne potrebujem
+  tabela$pridruzitev <- NULL
+  tabela$prebivalci <- NULL
+  tabela$gostota <- NULL
+  tabela$MEP <- NULL
   return(tabela)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvozi.druzine <- function(obcine) {
@@ -41,15 +57,3 @@ uvozi.druzine <- function(obcine) {
   data$obcina <- parse_factor(data$obcina, levels=obcine)
   return(data)
 }
-
-# Zapišimo podatke v razpredelnico obcine
-obcine <- uvozi.obcine()
-
-# Zapišimo podatke v razpredelnico druzine.
-druzine <- uvozi.druzine(levels(obcine$obcina))
-
-# Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi
-# potrebovali v 3. fazi, bi bilo smiselno funkcije dati v svojo
-# datoteko, tukaj pa bi klicali tiste, ki jih potrebujemo v
-# 2. fazi. Seveda bi morali ustrezno datoteko uvoziti v prihodnjih
-# fazah.
