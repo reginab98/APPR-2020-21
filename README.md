@@ -13,16 +13,20 @@ V projektni nalogi bom analizirala potovanja iz Slovenije. Osredotočila se bom 
 Uporabljala bom podatke s štirih spletnih strani:
 
 * SURS:
-*Oblika: CSV
+
+Oblika: CSV
 
 * eurostat:
-*Oblika: CSV
+
+Oblika: CSV
 
 * Wikipedija
-*Oblika:HTML
+
+Oblika:HTML
 
 * bts.gov
-*Oblika: CSV
+
+Oblika: CSV
 
 ## Zasnova podatkovnega modela
 
